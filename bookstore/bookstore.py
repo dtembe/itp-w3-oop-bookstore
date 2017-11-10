@@ -12,6 +12,19 @@ class Bookstore(object):
     def get_books(self):
         return self.book_list
 
+    def search_books(self, title='', author=''):
+
+        answer = []
+
+        if title != '':
+            for book in self.book_list:
+                if title == book.title:
+                    answer.append(book)
+        elif author != '':
+            for book in self.book_list:
+                if book.author == author:
+                    answer.append(book)
+        return answer
 
 
 class Author(object):
@@ -21,7 +34,7 @@ class Author(object):
         self.nationality = nationality
         self.book_list = []
 
-    def get_book(self):
+    def get_books(self):
         return self.book_list
 
 class Book(object):
