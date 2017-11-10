@@ -6,6 +6,13 @@ class Bookstore(object):
 
         self.response = []
 
+    def add_book(self, book):
+        self.book_list.append(book)
+
+    def get_books(self):
+        return self.book_list
+
+
 
 class Author(object):
 
@@ -14,6 +21,8 @@ class Author(object):
         self.nationality = nationality
         self.book_list = []
 
+    def get_book(self):
+        return self.book_list
 
 class Book(object):
 
